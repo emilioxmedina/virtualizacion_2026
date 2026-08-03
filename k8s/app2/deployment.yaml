@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-segunda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-segunda
+  template:
+    metadata:
+      labels:
+        app: app-segunda
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80

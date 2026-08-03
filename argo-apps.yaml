@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-primera
+  namespace: argocd-exmm
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/emilioxmedina/virtualizacion_2026'
+    targetRevision: assessment-06
+    path: k8s/app1
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: parcial-exmm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-segunda
+  namespace: argocd-exmm
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/emilioxmedina/virtualizacion_2026'
+    targetRevision: assessment-06
+    path: k8s/app2
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: parcial-exmm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
