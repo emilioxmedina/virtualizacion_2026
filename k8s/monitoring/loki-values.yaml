@@ -1,0 +1,6 @@
+promtail:
+  enabled: true
+grafana:
+  enabled: false # Lo instalaremos por separado con provisioning
+prometheus:
+  enabled: false # Lo instalaremos por separado
